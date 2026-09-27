@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+# Leftover font-fallback artifacts (HTTrack mirror saved failed EOT/SVG
+# fallback requests as "404 Not Found" HTML pages). Not needed by any
+# current browser (woff2/woff/ttf load normally) and have no search value.
+Disallow: /assets/fonts/*.html
+
+Sitemap: https://go-delivery.fr/sitemap.xml
