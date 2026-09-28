@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://go-delivery.fr/</loc>
-    <lastmod>2026-09-27</lastmod>
-  </url>
-  <url>
-    <loc>https://go-delivery.fr/contact.html</loc>
-    <lastmod>2026-09-27</lastmod>
-  </url>
-  <url>
-    <loc>https://go-delivery.fr/cgv.html</loc>
-    <lastmod>2026-09-27</lastmod>
-  </url>
+
+    <url>
+        <loc>https://go-delivery.fr/</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/demenagement-marseille.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/transport-marchandises.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/livraison-meubles.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/contact.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/cgv.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/mentions-legales.html</loc>
+    </url>
+
+    <url>
+        <loc>https://go-delivery.fr/politique-confidentialite.html</loc>
+    </url>
+
 </urlset>

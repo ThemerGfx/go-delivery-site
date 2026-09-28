@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
-# Leftover font-fallback artifacts (HTTrack mirror saved failed EOT/SVG
-# fallback requests as "404 Not Found" HTML pages). Not needed by any
-# current browser (woff2/woff/ttf load normally) and have no search value.
-Disallow: /assets/fonts/*.html
+
+# Note : assets/fonts/remixicon0c93.html et remixicon0c93-2.html (anciennes
+# pages d'erreur "404 Not Found" sauvegardées par erreur par HTTrack) ont été
+# supprimées du dépôt. robots.txt ne garantit pas la désindexation d'URLs deja
+# explorées : si Google les avait déjà indexées avant leur suppression, une
+# demande de suppression manuelle dans Search Console reste nécessaire en plus
+# du 404 réel désormais renvoyé par le serveur.
 
 Sitemap: https://go-delivery.fr/sitemap.xml

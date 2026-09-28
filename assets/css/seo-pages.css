@@ -1,0 +1,234 @@
+/* =========================================================
+   GO Delivery — Pages SEO services
+   ========================================================= */
+
+.seo-service-hero {
+    position: relative;
+    padding: 90px 0;
+    background:
+        linear-gradient(rgba(15, 27, 36, 0.82), rgba(15, 27, 36, 0.82)),
+        url("../images/breadcrumb-bg.png") center/cover no-repeat;
+}
+
+.seo-service-hero h1 {
+    color: #fff;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    text-transform: none;
+    margin-bottom: 20px;
+}
+
+.seo-service-hero p {
+    max-width: 760px;
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.seo-service-hero .seo-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #ff6600;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.seo-service-content {
+    padding: 80px 0;
+}
+
+.seo-service-content h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    text-transform: none;
+    margin-bottom: 24px;
+}
+
+.seo-service-content h3 {
+    font-size: 27px;
+    text-transform: none;
+    margin-bottom: 15px;
+}
+
+.seo-service-content p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.seo-service-intro {
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.seo-feature-card {
+    height: 100%;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(15, 27, 36, 0.06);
+}
+
+.seo-feature-card .seo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    color: #fff;
+    font-size: 23px;
+}
+
+.seo-process {
+    padding: 75px 0;
+    background: #f7f8fa;
+}
+
+.seo-process h2 {
+    text-transform: none;
+    margin-bottom: 40px;
+}
+
+.seo-step {
+    position: relative;
+    height: 100%;
+    padding: 28px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.seo-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: #ff6600;
+    color: #fff;
+    font-weight: 700;
+}
+
+.seo-step h3 {
+    font-size: 24px;
+    text-transform: none;
+    margin-bottom: 12px;
+}
+
+.seo-zone {
+    padding: 75px 0;
+}
+
+.seo-zone h2,
+.seo-related h2 {
+    text-transform: none;
+    margin-bottom: 24px;
+}
+
+.seo-zone p {
+    max-width: 900px;
+    line-height: 1.8;
+}
+
+.seo-related {
+    padding: 75px 0;
+    background: #f7f8fa;
+}
+
+.seo-related-card {
+    display: block;
+    height: 100%;
+    padding: 28px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seo-related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(15, 27, 36, 0.08);
+}
+
+.seo-related-card h3 {
+    font-size: 24px;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.seo-related-card p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.seo-cta {
+    padding: 75px 0;
+    background: #0f1b24;
+}
+
+.seo-cta h2 {
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 16px;
+}
+
+.seo-cta p {
+    max-width: 760px;
+    color: #e5e5e5;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.seo-page-footer {
+    padding: 38px 0;
+    background: #091118;
+    color: #d2d2d2;
+}
+
+.seo-page-footer a {
+    color: #fff;
+}
+
+.seo-page-footer a:hover {
+    color: #ff6600;
+}
+
+.seo-page-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.seo-page-footer p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+    .seo-service-hero {
+        padding: 65px 0;
+    }
+
+    .seo-service-hero p {
+        font-size: 17px;
+    }
+
+    .seo-service-content,
+    .seo-process,
+    .seo-zone,
+    .seo-related,
+    .seo-cta {
+        padding: 55px 0;
+    }
+
+    .seo-page-footer-links {
+        margin-top: 20px;
+    }
+}

@@ -159,13 +159,13 @@
 
                                     <!-- Champs Déménagement -->
                                     <div id="dem-fields" style="display: none;">
-                                        <input id="adresse-depart" type="text" placeholder="Adresse de départ">
+                                        <input id="adresse-depart" type="text" placeholder="Adresse de départ" aria-label="Adresse de départ">
                                         <span class="error-message" id="error-adresse-depart"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
                                         <!-- Étage de départ -->
-                                        <input type="number" id="etage-depart"
+                                        <input type="number" id="etage-depart" aria-label="Étage de départ"
                                             placeholder="Étage de départ (0 par défaut)" value="0" min="0">
 
                                         <!-- Ascenseur départ -->
@@ -178,13 +178,13 @@
                                             </select>
                                         </div>
 
-                                        <input id="adresse-arrivee" type="text" placeholder="Adresse d’arrivée">
+                                        <input id="adresse-arrivee" type="text" placeholder="Adresse d’arrivée" aria-label="Adresse d’arrivée">
                                         <span class="error-message" id="error-adresse-arrivee"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
                                         <!-- Étage d’arrivée -->
-                                        <input type="number" id="etage-arrivee"
+                                        <input type="number" id="etage-arrivee" aria-label="Étage d’arrivée"
                                             placeholder="Étage d’arrivée (0 par défaut)" value="0" min="0">
 
                                         <!-- Ascenseur arrivée -->
@@ -216,7 +216,7 @@
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <textarea id="cubage"
+                                        <textarea id="cubage" aria-label="Cubage estimé ou liste d’articles"
                                             placeholder="Cubage estimé ou liste d’articles"></textarea>
                                         <span class="error-message" id="error-cubage"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
@@ -243,18 +243,18 @@
                                                 <p style="margin-top: -20px;">Garde-meubles (optionnel)</p>
                                             </label>
                                         </div>
-                                        <textarea placeholder="Commentaires supplémentaires"></textarea>
+                                        <textarea placeholder="Commentaires supplémentaires" aria-label="Commentaires supplémentaires"></textarea>
                                     </div>
 
 
                                     <!-- Champs Transport -->
                                     <div id="transport-fields" style="display: none;">
-                                        <input id="adresse-enlevement" type="text" placeholder="Adresse d’enlèvement">
+                                        <input id="adresse-enlevement" type="text" placeholder="Adresse d’enlèvement" aria-label="Adresse d’enlèvement">
                                         <span class="error-message" id="error-adresse-enlevement"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <input id="adresse-livraison" type="text" placeholder="Adresse de livraison">
+                                        <input id="adresse-livraison" type="text" placeholder="Adresse de livraison" aria-label="Adresse de livraison">
                                         <span class="error-message" id="error-adresse-livraison"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
@@ -265,24 +265,24 @@
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <textarea id="type-marchandise"
+                                        <textarea id="type-marchandise" aria-label="Type de marchandise"
                                             placeholder="Type de marchandise (description)"></textarea>
                                         <span class="error-message" id="error-type-marchandise"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <input id="poids-estime" type="number" placeholder="Poids estimé (kg)">
+                                        <input id="poids-estime" type="number" placeholder="Poids estimé (kg)" aria-label="Poids estimé en kg">
                                         <span class="error-message" id="error-poids-estime"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <input id="nombre-manutentionnaires" type="number"
+                                        <input id="nombre-manutentionnaires" type="number" aria-label="Nombre de manutentionnaires souhaités"
                                             placeholder="Nombre de manutentionnaires souhaités">
                                         <span class="error-message" id="error-nombre-manutentionnaires"
                                             style="display: none; color: red; font-size: 0.8rem; margin-top: -28px; margin-left: 5px; margin-bottom: 18px;">Veuillez
                                             remplir ce champ</span>
 
-                                        <textarea id="commentaires" placeholder="Commentaires"></textarea>
+                                        <textarea id="commentaires" placeholder="Commentaires" aria-label="Commentaires"></textarea>
                                     </div>
 
                                     <button type="submit" id="submit-btn" disabled
@@ -360,7 +360,7 @@
                                             </div>
                                             <div class="info-text">
                                                 <h6 class="title">Téléphone</h6>
-                                                <p>(+33) 06 66 67 01 67</p>
+                                                <p><a href="tel:+33666670167">(+33) 06 66 67 01 67</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -371,8 +371,7 @@
                                             </div>
                                             <div class="info-text">
                                                 <h6 class="title">Email</h6>
-                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@go-delivery.fr"
-                                                    target="_blank" style="text-decoration: underline; color: inherit;">
+                                                <a href="mailto:contact@go-delivery.fr" style="text-decoration: underline; color: inherit;">
                                                     contact@go-delivery.fr
                                                 </a>
                                             </div>
