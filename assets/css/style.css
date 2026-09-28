@@ -5398,3 +5398,60 @@ button:disabled {
   color: #666 !important;
   border-color: #999 !important;
 }
+
+/* =========================================================
+   GO DELIVERY — CARTES SERVICES CLIQUABLES
+   ========================================================= */
+
+.service-card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+}
+
+.service-card-link:hover {
+    color: inherit;
+}
+
+.service-card-link .single-service-2 {
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.service-card-link:hover .single-service-2 {
+    transform: translateY(-5px);
+    border-color: rgba(0, 123, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(15, 27, 36, 0.10);
+}
+
+.service-card-link .title {
+    color: #0f1b24;
+    transition: color 0.2s ease;
+}
+
+.service-card-link:hover .title {
+    color: #007bff;
+}
+
+.service-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    color: #007bff;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+}
+
+.service-more i {
+    transition: transform 0.2s ease;
+}
+
+.service-card-link:hover .service-more i {
+    transform: translateX(4px);
+}
