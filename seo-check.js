@@ -8,6 +8,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { auditExtra } = require("./seo-check-extra");
 
 const ROOT = __dirname;
 const SITE_ORIGIN = "https://go-delivery.fr";
@@ -907,7 +908,9 @@ function auditSite(root = ROOT) {
     }
   }
 
-  return {
+  auditExtra(root, pages, errors, warnings);
+
+return {
     pages,
     errors,
     warnings,

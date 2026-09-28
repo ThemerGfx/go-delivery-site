@@ -381,3 +381,5 @@ try {
 
   process.exit(1);
 }
+
+require("./seo-check-extra.test.js");
