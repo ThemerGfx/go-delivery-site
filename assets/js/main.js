@@ -15,6 +15,44 @@
             onePage: false
         });
 
+        
+        /* === GO DELIVERY MOBILE MENU CLOSE START === */
+
+        /*
+         * MeanMenu reste ouvert après un lien d'ancrage.
+         * Sur mobile, le clic accomplit sa navigation
+         * puis referme immédiatement le panneau.
+         */
+        $(document).on(
+            'click',
+            '.mean-nav a',
+            function () {
+
+                if (
+                    !window.matchMedia(
+                        '(max-width: 991.98px)'
+                    ).matches
+                ) {
+                    return;
+                }
+
+                const $reveal =
+                    $('.meanmenu-reveal');
+
+                if (
+                    $reveal.length &&
+                    $reveal.hasClass('meanclose')
+                ) {
+                    setTimeout(function () {
+                        $reveal.trigger('click');
+                    }, 0);
+                }
+            }
+        );
+
+        /* === GO DELIVERY MOBILE MENU CLOSE END === */
+
+
         // partner slide duplicate
         if ($('.partner-slider').length) {
             $('.partner-slider').append($('.partner-slider').html());

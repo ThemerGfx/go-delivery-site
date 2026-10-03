@@ -1,0 +1,265 @@
+/* =========================================================
+   GO DELIVERY — LAYOUT SYSTEM
+   Global spacing rhythm / responsive consistency
+   ========================================================= */
+
+:root {
+    --gd-space-1: 8px;
+    --gd-space-2: 12px;
+    --gd-space-3: 16px;
+    --gd-space-4: 24px;
+    --gd-space-5: 32px;
+    --gd-space-6: 40px;
+    --gd-space-7: 48px;
+    --gd-space-8: 64px;
+
+    --gd-section-y:
+        clamp(56px, 7vw, 88px);
+
+    --gd-block-gap:
+        clamp(32px, 5vw, 52px);
+
+    --gd-card-gap:
+        clamp(20px, 3vw, 32px);
+
+    --gd-card-padding:
+        clamp(28px, 4vw, 40px);
+
+    --gd-radius-card: 20px;
+}
+
+/* ---------------------------------------------------------
+   Anchor navigation + sticky header
+   --------------------------------------------------------- */
+
+html {
+    scroll-padding-top: 110px;
+}
+
+#nosservices,
+#apropos,
+#footer {
+    scroll-margin-top: 110px;
+}
+
+
+/* =========================================================
+   HOMEPAGE — SECTION RHYTHM
+   ========================================================= */
+
+.about-area-2,
+.service-area-2 {
+    padding-top: var(--gd-section-y) !important;
+    padding-bottom: var(--gd-section-y) !important;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-area-2 .about-content .section-top {
+    margin-bottom: var(--gd-space-4);
+}
+
+.about-area-2 .about-content p {
+    margin-bottom: 0;
+}
+
+.about-area-2 .about-content p + p {
+    margin-top: var(--gd-space-3);
+}
+
+.about-area-2 .check-list {
+    margin-top: var(--gd-space-4) !important;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.service-area-2 .service-items {
+    margin-top: var(--gd-block-gap) !important;
+}
+
+/*
+ * Bootstrap possède un gutter horizontal,
+ * mais le layout historique n'avait pas de rythme vertical
+ * fiable entre les cartes.
+ */
+.service-area-2 .service-items > .row {
+    row-gap: var(--gd-card-gap);
+}
+
+.service-area-2 .service-items [class*="col-"] {
+    display: flex;
+}
+
+.service-area-2 .service-card-link {
+    width: 100%;
+    height: 100%;
+}
+
+.service-area-2 .service-card-link .single-service-2 {
+    width: 100%;
+    height: 100%;
+
+    margin-bottom: 0;
+
+    padding: var(--gd-card-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-area-2 .single-service-2 .service-icon {
+    margin-bottom: var(--gd-space-5);
+}
+
+.service-area-2 .service-card-link .title {
+    margin-bottom: var(--gd-space-3);
+}
+
+.service-area-2 .service-description {
+    margin-bottom: 0;
+    line-height: 1.65;
+}
+
+.service-area-2 .service-more {
+    margin-top: var(--gd-space-4);
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-area-2 .faq-content {
+    padding-top: var(--gd-section-y);
+    padding-bottom: var(--gd-section-y);
+}
+
+.faq-area-2 .accordion-area {
+    margin-top: var(--gd-block-gap) !important;
+}
+
+.faq-area-2 .accordion-item + .accordion-item {
+    margin-top: var(--gd-space-3) !important;
+}
+
+
+/* =========================================================
+   REVIEWS / TESTIMONIALS
+   Remove historical negative spacing + scaling hacks.
+   ========================================================= */
+
+.team-area {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    padding-top: var(--gd-section-y) !important;
+    padding-bottom: var(--gd-section-y) !important;
+}
+
+.team-slider {
+    width: 100%;
+    max-width: 1050px;
+
+    margin:
+        var(--gd-block-gap)
+        auto
+        0 !important;
+
+    padding: 0 var(--gd-space-3);
+
+    transform: none !important;
+    min-height: 0 !important;
+}
+
+.single-member {
+    transform: none !important;
+}
+
+
+/* =========================================================
+   COUNTERS
+   ========================================================= */
+
+.counter-area-2 {
+    padding-top: var(--gd-section-y) !important;
+    padding-bottom: var(--gd-section-y) !important;
+}
+
+.counter-area-2 .row {
+    row-gap: var(--gd-card-gap);
+}
+
+.counter-row-desktop-only-margin {
+    margin-top: 0 !important;
+}
+
+.counter-area-2 .single-counter-2 {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SEO SERVICE PAGES
+   Keep the same spacing vocabulary.
+   ========================================================= */
+
+.seo-service-content,
+.seo-process,
+.seo-zone,
+.seo-related,
+.seo-cta {
+    padding-top: var(--gd-section-y) !important;
+    padding-bottom: var(--gd-section-y) !important;
+}
+
+.seo-service-intro {
+    margin-bottom: var(--gd-block-gap);
+}
+
+.seo-service-content .row,
+.seo-process .row,
+.seo-related .row {
+    row-gap: var(--gd-card-gap);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    :root {
+        --gd-section-y: 56px;
+        --gd-block-gap: 36px;
+        --gd-card-gap: 22px;
+        --gd-card-padding: 30px;
+    }
+
+    html {
+        scroll-padding-top: 105px;
+    }
+
+    #nosservices,
+    #apropos,
+    #footer {
+        scroll-margin-top: 105px;
+    }
+
+    .service-area-2 .single-service-2 .service-icon {
+        margin-bottom: var(--gd-space-4);
+    }
+
+    .team-slider {
+        padding-left: var(--gd-space-3);
+        padding-right: var(--gd-space-3);
+    }
+}
