@@ -777,3 +777,543 @@
 }
 
 /* === GO DELIVERY REVIEW LOGO END === */
+
+/* === GO DELIVERY REVIEWS CAROUSEL START === */
+
+/*
+|--------------------------------------------------------------------------
+| Desktop = 3 cartes
+| Tablet  = 2 cartes
+| Mobile  = 1 carte
+|--------------------------------------------------------------------------
+*/
+
+.google-reviews-grid {
+    display: flex !important;
+
+    gap:
+        var(
+            --gd-card-gap,
+            28px
+        );
+
+    overflow-x: auto;
+
+    overscroll-behavior-inline:
+        contain;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type:
+        x mandatory;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    touch-action:
+        pan-x pan-y;
+}
+
+.google-reviews-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* DESKTOP — 3 visibles */
+
+.google-review-card {
+    flex:
+        0 0
+        calc(
+            (
+                100%
+                - (
+                    var(
+                        --gd-card-gap,
+                        28px
+                    )
+                    * 2
+                )
+            )
+            / 3
+        );
+
+    scroll-snap-align: start;
+}
+
+
+/* TABLET — 2 visibles */
+
+@media (
+    max-width: 991.98px
+) {
+
+    .google-review-card {
+        flex:
+            0 0
+            calc(
+                (
+                    100%
+                    - var(
+                        --gd-card-gap,
+                        28px
+                    )
+                )
+                / 2
+            );
+    }
+
+}
+
+
+/* MOBILE — 1 visible */
+
+@media (
+    max-width: 767.98px
+) {
+
+    .google-reviews-grid {
+        gap: 16px;
+
+        margin:
+            0 -15px;
+
+        padding:
+            4px 15px
+            18px;
+
+        scroll-padding-inline:
+            15px;
+    }
+
+    .google-review-card {
+        flex:
+            0 0
+            calc(
+                100%
+                - 30px
+            );
+
+        scroll-snap-align:
+            center;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Mobile dots
+   --------------------------------------------------------- */
+
+.google-reviews-mobile-hint {
+    display: none;
+}
+
+@media (
+    max-width: 767.98px
+) {
+
+    .google-reviews-mobile-hint {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 7px;
+
+        margin-top: 6px;
+    }
+
+    .google-reviews-mobile-hint span {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 999px;
+
+        background: #cdd4d9;
+
+        transition:
+            width 0.2s ease,
+            background-color 0.2s ease;
+    }
+
+    .google-reviews-mobile-hint
+    span.is-active {
+        width: 18px;
+
+        background: #007bff;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Profile pictures
+   Ready for Business Profile API
+   --------------------------------------------------------- */
+
+.google-review-avatar {
+    overflow: hidden;
+}
+
+.google-review-avatar img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: inherit;
+}
+
+
+/* ---------------------------------------------------------
+   Date / metadata
+   --------------------------------------------------------- */
+
+.google-review-date {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #89939b;
+
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   Motion accessibility
+   --------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .google-reviews-grid {
+        scroll-behavior: auto;
+    }
+
+}
+
+/* === GO DELIVERY REVIEWS CAROUSEL END === */
+
+/* === GO DELIVERY REVIEWS NAVIGATION START === */
+
+.google-reviews-controls {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.google-reviews-controls.is-hidden {
+    display: none;
+}
+
+.google-reviews-arrow {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        #dce2e7;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #0f1b24;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            15,
+            27,
+            36,
+            0.07
+        );
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.google-reviews-arrow:hover {
+    border-color: #007bff;
+
+    background: #007bff;
+
+    color: #ffffff;
+
+    transform:
+        translateY(-2px);
+}
+
+.google-reviews-arrow:focus-visible {
+    outline:
+        3px solid
+        rgba(
+            0,
+            123,
+            255,
+            0.22
+        );
+
+    outline-offset: 3px;
+}
+
+
+/*
+ * Desktop / tablette :
+ * navigation par flèches + track.
+ */
+
+.google-reviews-grid {
+    scroll-snap-type:
+        x mandatory;
+}
+
+
+/*
+ * Mobile :
+ * priorité au swipe et aux indicateurs.
+ * On cache les flèches.
+ */
+
+@media (
+    max-width: 767.98px
+) {
+
+    .google-reviews-controls {
+        display: none !important;
+    }
+
+}
+
+
+/*
+ * Les dots sont maintenant générés
+ * dynamiquement selon le nombre d'avis.
+ */
+
+.google-reviews-mobile-hint span:first-child {
+    width: 7px;
+    background: #cdd4d9;
+}
+
+.google-reviews-mobile-hint
+span.is-active {
+    width: 18px;
+    background: #007bff;
+}
+
+/* === GO DELIVERY REVIEWS NAVIGATION END === */
+
+/* === GO DELIVERY REVIEWS PHASE 10 START === */
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+   ←   Voir tous les avis Google   →
+   ========================================================= */
+
+.google-reviews-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-top:
+        clamp(
+            30px,
+            4vw,
+            42px
+        );
+}
+
+
+/*
+ * Une flèche peut être masquée par le JS
+ * sans masquer le CTA central.
+ */
+
+.google-reviews-arrow.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/*
+ * Taille cohérente avec le bouton central.
+ */
+
+.google-reviews-actions
+.google-reviews-arrow {
+    flex: 0 0 auto;
+
+    width: 48px;
+    height: 48px;
+
+    margin: 0;
+}
+
+
+/*
+ * Le bouton central ne doit plus avoir
+ * d'icône interne.
+ */
+
+.google-reviews-actions
+.google-reviews-button-primary {
+    margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE RATING SUMMARY
+   On conserve UNIQUEMENT :
+   Logo + GO Delivery sur Google + sous-titre
+   ========================================================= */
+
+@media (
+    max-width: 767.98px
+) {
+
+    /*
+     * Bandeau compact :
+     * uniquement identité Google/GO Delivery.
+     */
+
+    .google-rating-summary {
+        display: block;
+
+        padding: 24px 26px;
+
+        border-radius: 20px;
+    }
+
+
+    /*
+     * Identité conservée.
+     */
+
+    .google-rating-brand {
+        width: 100%;
+    }
+
+
+    /*
+     * Note + étoiles + "Avis Google"
+     * supprimés uniquement en mobile.
+     */
+
+    .google-rating-score {
+        display: none !important;
+    }
+
+
+    /*
+     * "Voir la fiche Google"
+     * supprimé uniquement dans ce bandeau mobile.
+     */
+
+    .google-rating-summary
+    .google-reviews-button {
+        display: none !important;
+    }
+
+
+    /*
+     * Les flèches ne sont pas nécessaires
+     * en mobile : swipe horizontal.
+     */
+
+    .google-reviews-actions
+    .google-reviews-arrow {
+        display: none !important;
+    }
+
+
+    /*
+     * Le CTA reste centré et pleine largeur,
+     * comme actuellement.
+     */
+
+    .google-reviews-actions {
+        display: block;
+
+        margin-top: 28px;
+    }
+
+    .google-reviews-actions
+    .google-reviews-button-primary {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   On garde les flèches autour du CTA.
+   ========================================================= */
+
+@media (
+    min-width: 768px
+) and (
+    max-width: 991.98px
+) {
+
+    .google-reviews-actions {
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.google-reviews-arrow:focus-visible {
+    outline:
+        3px solid
+        rgba(
+            0,
+            123,
+            255,
+            0.22
+        );
+
+    outline-offset: 3px;
+}
+
+
+/* === GO DELIVERY REVIEWS PHASE 10 END === */
