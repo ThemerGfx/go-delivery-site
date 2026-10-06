@@ -2,6 +2,11 @@
    GO DELIVERY — GOOGLE REVIEWS
    ========================================================= */
 
+
+/* =========================================================
+   SECTION / HEADING
+   ========================================================= */
+
 .google-reviews-section {
     padding:
         var(--gd-section-y, 80px)
@@ -15,13 +20,9 @@
         );
 }
 
-
-/* ---------------------------------------------------------
-   Heading
-   --------------------------------------------------------- */
-
 .google-reviews-heading {
     max-width: 760px;
+
     margin:
         0 auto
         clamp(36px, 5vw, 52px);
@@ -77,9 +78,9 @@
 }
 
 
-/* ---------------------------------------------------------
-   Rating summary
-   --------------------------------------------------------- */
+/* =========================================================
+   GOOGLE RATING SUMMARY
+   ========================================================= */
 
 .google-rating-summary {
     display: grid;
@@ -116,7 +117,6 @@
         );
 }
 
-
 .google-rating-brand {
     display: flex;
 
@@ -144,16 +144,30 @@
 
     color: #007bff;
 
-    font-size: 26px;
-
-    font-weight: 800;
-
     font-family:
         Arial,
         sans-serif;
+
+    font-size: 26px;
+    font-weight: 800;
 }
 
-.google-rating-brand div {
+.google-g.google-g-logo {
+    overflow: hidden;
+
+    padding: 6px;
+}
+
+.google-g.google-g-logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.google-rating-brand > div {
     min-width: 0;
 }
 
@@ -162,11 +176,11 @@
 
     color: #ffffff;
 
-    font-size: 20px;
-
     font-family:
         "Rajdhani",
         sans-serif;
+
+    font-size: 20px;
 }
 
 .google-rating-brand span {
@@ -179,7 +193,6 @@
     line-height: 1.4;
 }
 
-
 .google-rating-score {
     display: flex;
 
@@ -191,15 +204,14 @@
 .google-rating-value {
     color: #ffffff;
 
-    font-size: 48px;
-
     font-family:
         "Rajdhani",
         sans-serif;
 
-    line-height: 1;
-
+    font-size: 48px;
     font-weight: 700;
+
+    line-height: 1;
 }
 
 .google-rating-details {
@@ -229,30 +241,73 @@
 }
 
 
-/* ---------------------------------------------------------
-   Cards
-   --------------------------------------------------------- */
+/* =========================================================
+   REVIEWS CAROUSEL
+   ========================================================= */
 
 .google-reviews-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(0, 1fr)
-        );
+    display: flex;
 
     gap:
         var(
             --gd-card-gap,
             28px
         );
+
+    overflow-x: auto;
+
+    overscroll-behavior-inline:
+        contain;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type:
+        x mandatory;
+
+    scroll-padding-inline: 6%;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    touch-action:
+        pan-x pan-y;
 }
+
+.google-reviews-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   REVIEW CARD
+   Desktop = 3 cartes principales centrées
+   avec aperçu à gauche et à droite
+   ========================================================= */
 
 .google-review-card {
     display: flex;
 
     flex-direction: column;
+
+    flex:
+        0 0
+        calc(
+            (
+                88%
+                - (
+                    var(
+                        --gd-card-gap,
+                        28px
+                    )
+                    * 2
+                )
+            )
+            / 3
+        );
 
     min-width: 0;
 
@@ -279,6 +334,8 @@
             36,
             0.06
         );
+
+    scroll-snap-align: center;
 
     transition:
         transform 0.2s ease,
@@ -313,8 +370,13 @@
                 0.10
             );
     }
+
 }
 
+
+/* =========================================================
+   REVIEW HEADER
+   ========================================================= */
 
 .google-review-top {
     display: flex;
@@ -331,6 +393,8 @@
     justify-content: center;
 
     flex: 0 0 auto;
+
+    overflow: hidden;
 
     width: 48px;
     height: 48px;
@@ -352,8 +416,18 @@
         sans-serif;
 
     font-size: 17px;
-
     font-weight: 700;
+}
+
+.google-review-avatar img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    object-fit: cover;
 }
 
 .google-review-author {
@@ -394,6 +468,8 @@
     align-items: center;
     justify-content: center;
 
+    flex: 0 0 auto;
+
     width: 34px;
     height: 34px;
 
@@ -405,13 +481,17 @@
 
     color: #007bff;
 
-    font-weight: 800;
-
     font-family:
         Arial,
         sans-serif;
+
+    font-weight: 800;
 }
 
+
+/* =========================================================
+   REVIEW CONTENT
+   ========================================================= */
 
 .google-review-stars {
     margin-top: 22px;
@@ -422,7 +502,6 @@
 
     letter-spacing: 2px;
 }
-
 
 .google-review-text {
     display: -webkit-box;
@@ -441,7 +520,6 @@
 
     -webkit-line-clamp: 6;
 }
-
 
 .google-review-footer {
     display: flex;
@@ -470,10 +548,20 @@
     font-weight: 600;
 }
 
+.google-review-date {
+    display: block;
 
-/* ---------------------------------------------------------
-   Buttons
-   --------------------------------------------------------- */
+    margin-top: 3px;
+
+    color: #89939b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .google-reviews-button {
     display: inline-flex;
@@ -494,7 +582,6 @@
         sans-serif;
 
     font-size: 16px;
-
     font-weight: 700;
 
     transition:
@@ -503,7 +590,6 @@
         border-color 0.2s ease,
         transform 0.2s ease;
 }
-
 
 .google-reviews-button-outline {
     border:
@@ -524,8 +610,9 @@
     color: #ffffff;
 }
 
-
 .google-reviews-button-primary {
+    margin: 0;
+
     border:
         1px solid
         #007bff;
@@ -544,11 +631,18 @@
 }
 
 
+/* =========================================================
+   CAROUSEL BOTTOM ACTIONS
+   ←   Voir tous les avis Google   →
+   ========================================================= */
+
 .google-reviews-actions {
     display: flex;
 
     align-items: center;
     justify-content: center;
+
+    gap: 22px;
 
     margin-top:
         clamp(
@@ -558,479 +652,18 @@
         );
 }
 
-
-/* ---------------------------------------------------------
-   Mobile hint
-   --------------------------------------------------------- */
-
-.google-reviews-mobile-hint {
-    display: none;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (
-    max-width: 991.98px
-) {
-
-    .google-rating-summary {
-        grid-template-columns:
-            minmax(0, 1fr)
-            auto;
-
-        gap: 24px;
-    }
-
-    .google-rating-summary
-    .google-reviews-button {
-        grid-column:
-            1 / -1;
-
-        justify-self: start;
-    }
-
-    .google-reviews-grid {
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (
-    max-width: 767.98px
-) {
-
-    .google-reviews-section {
-        overflow: hidden;
-    }
-
-    .google-reviews-heading {
-        padding:
-            0 8px;
-
-        margin-bottom: 34px;
-    }
-
-    .google-reviews-intro {
-        font-size: 16px;
-    }
-
-
-    .google-rating-summary {
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 22px;
-
-        padding: 26px;
-
-        border-radius: 20px;
-    }
-
-    .google-rating-score {
-        justify-content: center;
-
-        padding:
-            18px 0;
-
-        border-top:
-            1px solid
-            rgba(
-                255,
-                255,
-                255,
-                0.10
-            );
-
-        border-bottom:
-            1px solid
-            rgba(
-                255,
-                255,
-                255,
-                0.10
-            );
-    }
-
-    .google-rating-value {
-        font-size: 54px;
-    }
-
-    .google-rating-summary
-    .google-reviews-button {
-        width: 100%;
-    }
-
-
-    /*
-     * Carousel natif mobile :
-     * pas de JS nécessaire.
-     */
-
-    .google-reviews-grid {
-        display: flex;
-
-        gap: 16px;
-
-        overflow-x: auto;
-
-        margin:
-            0 -15px;
-
-        padding:
-            4px 15px
-            18px;
-
-        scroll-snap-type:
-            x mandatory;
-
-        scrollbar-width:
-            none;
-
-        -webkit-overflow-scrolling:
-            touch;
-    }
-
-    .google-reviews-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .google-review-card {
-        flex:
-            0 0
-            calc(100% - 30px);
-
-        scroll-snap-align:
-            center;
-    }
-
-
-    .google-reviews-mobile-hint {
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        gap: 7px;
-
-        margin-top: 5px;
-    }
-
-    .google-reviews-mobile-hint span {
-        width: 7px;
-        height: 7px;
-
-        border-radius: 50%;
-
-        background:
-            #cdd4d9;
-    }
-
-    .google-reviews-mobile-hint
-    span:first-child {
-        width: 18px;
-
-        border-radius: 20px;
-
-        background:
-            #007bff;
-    }
-
-
-    .google-reviews-actions {
-        margin-top: 28px;
-    }
-
-    .google-reviews-actions
-    .google-reviews-button {
-        width: 100%;
-    }
-
-}
-
-/* === GO DELIVERY REVIEW LOGO START === */
-
-.google-g.google-g-logo {
-    overflow: hidden;
-    padding: 6px;
-}
-
-.google-g.google-g-logo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* === GO DELIVERY REVIEW LOGO END === */
-
-/* === GO DELIVERY REVIEWS CAROUSEL START === */
-
-/*
-|--------------------------------------------------------------------------
-| Desktop = 3 cartes
-| Tablet  = 2 cartes
-| Mobile  = 1 carte
-|--------------------------------------------------------------------------
-*/
-
-.google-reviews-grid {
-    display: flex !important;
-
-    gap:
-        var(
-            --gd-card-gap,
-            28px
-        );
-
-    overflow-x: auto;
-
-    overscroll-behavior-inline:
-        contain;
-
-    scroll-behavior: smooth;
-
-    scroll-snap-type:
-        x mandatory;
-
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
-
-    -webkit-overflow-scrolling:
-        touch;
-
-    touch-action:
-        pan-x pan-y;
-}
-
-.google-reviews-grid::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* DESKTOP — 3 visibles */
-
-.google-review-card {
-    flex:
-        0 0
-        calc(
-            (
-                100%
-                - (
-                    var(
-                        --gd-card-gap,
-                        28px
-                    )
-                    * 2
-                )
-            )
-            / 3
-        );
-
-    scroll-snap-align: start;
-}
-
-
-/* TABLET — 2 visibles */
-
-@media (
-    max-width: 991.98px
-) {
-
-    .google-review-card {
-        flex:
-            0 0
-            calc(
-                (
-                    100%
-                    - var(
-                        --gd-card-gap,
-                        28px
-                    )
-                )
-                / 2
-            );
-    }
-
-}
-
-
-/* MOBILE — 1 visible */
-
-@media (
-    max-width: 767.98px
-) {
-
-    .google-reviews-grid {
-        gap: 16px;
-
-        margin:
-            0 -15px;
-
-        padding:
-            4px 15px
-            18px;
-
-        scroll-padding-inline:
-            15px;
-    }
-
-    .google-review-card {
-        flex:
-            0 0
-            calc(
-                100%
-                - 30px
-            );
-
-        scroll-snap-align:
-            center;
-    }
-
-}
-
-
-/* ---------------------------------------------------------
-   Mobile dots
-   --------------------------------------------------------- */
-
-.google-reviews-mobile-hint {
-    display: none;
-}
-
-@media (
-    max-width: 767.98px
-) {
-
-    .google-reviews-mobile-hint {
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 7px;
-
-        margin-top: 6px;
-    }
-
-    .google-reviews-mobile-hint span {
-        width: 7px;
-        height: 7px;
-
-        border-radius: 999px;
-
-        background: #cdd4d9;
-
-        transition:
-            width 0.2s ease,
-            background-color 0.2s ease;
-    }
-
-    .google-reviews-mobile-hint
-    span.is-active {
-        width: 18px;
-
-        background: #007bff;
-    }
-
-}
-
-
-/* ---------------------------------------------------------
-   Profile pictures
-   Ready for Business Profile API
-   --------------------------------------------------------- */
-
-.google-review-avatar {
-    overflow: hidden;
-}
-
-.google-review-avatar img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: inherit;
-}
-
-
-/* ---------------------------------------------------------
-   Date / metadata
-   --------------------------------------------------------- */
-
-.google-review-date {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #89939b;
-
-    font-size: 13px;
-}
-
-
-/* ---------------------------------------------------------
-   Motion accessibility
-   --------------------------------------------------------- */
-
-@media (
-    prefers-reduced-motion:
-    reduce
-) {
-
-    .google-reviews-grid {
-        scroll-behavior: auto;
-    }
-
-}
-
-/* === GO DELIVERY REVIEWS CAROUSEL END === */
-
-/* === GO DELIVERY REVIEWS NAVIGATION START === */
-
-.google-reviews-controls {
-    display: flex;
-
-    justify-content: flex-end;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 18px;
-}
-
-.google-reviews-controls.is-hidden {
-    display: none;
-}
-
 .google-reviews-arrow {
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    width: 46px;
-    height: 46px;
+    flex: 0 0 auto;
 
+    width: 48px;
+    height: 48px;
+
+    margin: 0;
     padding: 0;
 
     border:
@@ -1087,202 +720,74 @@
     outline-offset: 3px;
 }
 
-
-/*
- * Desktop / tablette :
- * navigation par flèches + track.
- */
-
-.google-reviews-grid {
-    scroll-snap-type:
-        x mandatory;
-}
-
-
-/*
- * Mobile :
- * priorité au swipe et aux indicateurs.
- * On cache les flèches.
- */
-
-@media (
-    max-width: 767.98px
-) {
-
-    .google-reviews-controls {
-        display: none !important;
-    }
-
-}
-
-
-/*
- * Les dots sont maintenant générés
- * dynamiquement selon le nombre d'avis.
- */
-
-.google-reviews-mobile-hint span:first-child {
-    width: 7px;
-    background: #cdd4d9;
-}
-
-.google-reviews-mobile-hint
-span.is-active {
-    width: 18px;
-    background: #007bff;
-}
-
-/* === GO DELIVERY REVIEWS NAVIGATION END === */
-
-/* === GO DELIVERY REVIEWS PHASE 10 START === */
-
-
-/* =========================================================
-   BOTTOM NAVIGATION
-   ←   Voir tous les avis Google   →
-   ========================================================= */
-
-.google-reviews-actions {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 22px;
-
-    margin-top:
-        clamp(
-            30px,
-            4vw,
-            42px
-        );
-}
-
-
-/*
- * Une flèche peut être masquée par le JS
- * sans masquer le CTA central.
- */
-
 .google-reviews-arrow.is-hidden {
     visibility: hidden;
+
     pointer-events: none;
 }
 
 
-/*
- * Taille cohérente avec le bouton central.
- */
-
-.google-reviews-actions
-.google-reviews-arrow {
-    flex: 0 0 auto;
-
-    width: 48px;
-    height: 48px;
-
-    margin: 0;
-}
-
-
-/*
- * Le bouton central ne doit plus avoir
- * d'icône interne.
- */
-
-.google-reviews-actions
-.google-reviews-button-primary {
-    margin: 0;
-}
-
-
 /* =========================================================
-   MOBILE RATING SUMMARY
-   On conserve UNIQUEMENT :
-   Logo + GO Delivery sur Google + sous-titre
+   MOBILE DOTS
    ========================================================= */
 
-@media (
-    max-width: 767.98px
-) {
-
-    /*
-     * Bandeau compact :
-     * uniquement identité Google/GO Delivery.
-     */
-
-    .google-rating-summary {
-        display: block;
-
-        padding: 24px 26px;
-
-        border-radius: 20px;
-    }
-
-
-    /*
-     * Identité conservée.
-     */
-
-    .google-rating-brand {
-        width: 100%;
-    }
-
-
-    /*
-     * Note + étoiles + "Avis Google"
-     * supprimés uniquement en mobile.
-     */
-
-    .google-rating-score {
-        display: none !important;
-    }
-
-
-    /*
-     * "Voir la fiche Google"
-     * supprimé uniquement dans ce bandeau mobile.
-     */
-
-    .google-rating-summary
-    .google-reviews-button {
-        display: none !important;
-    }
-
-
-    /*
-     * Les flèches ne sont pas nécessaires
-     * en mobile : swipe horizontal.
-     */
-
-    .google-reviews-actions
-    .google-reviews-arrow {
-        display: none !important;
-    }
-
-
-    /*
-     * Le CTA reste centré et pleine largeur,
-     * comme actuellement.
-     */
-
-    .google-reviews-actions {
-        display: block;
-
-        margin-top: 28px;
-    }
-
-    .google-reviews-actions
-    .google-reviews-button-primary {
-        width: 100%;
-    }
-
+.google-reviews-mobile-hint {
+    display: none;
 }
 
 
 /* =========================================================
    TABLET
-   On garde les flèches autour du CTA.
+   2 cartes principales centrées
+   avec aperçu à gauche et à droite
+   ========================================================= */
+
+@media (
+    max-width: 991.98px
+) {
+
+    .google-rating-summary {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+
+        gap: 24px;
+    }
+
+    .google-rating-summary
+    .google-reviews-button {
+        grid-column:
+            1 / -1;
+
+        justify-self: start;
+    }
+
+    .google-reviews-grid {
+        scroll-padding-inline: 8%;
+    }
+
+    .google-review-card {
+        flex:
+            0 0
+            calc(
+                (
+                    84%
+                    - var(
+                        --gd-card-gap,
+                        28px
+                    )
+                )
+                / 2
+            );
+
+        scroll-snap-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET ONLY
    ========================================================= */
 
 @media (
@@ -1299,21 +804,217 @@ span.is-active {
 
 
 /* =========================================================
-   ACCESSIBILITY
+   MOBILE
+   1 carte principale centrée
+   avec aperçu à gauche et à droite
    ========================================================= */
 
-.google-reviews-arrow:focus-visible {
-    outline:
-        3px solid
-        rgba(
-            0,
-            123,
-            255,
-            0.22
-        );
+@media (
+    max-width: 767.98px
+) {
 
-    outline-offset: 3px;
+    .google-reviews-section {
+        overflow: hidden;
+    }
+
+    .google-reviews-heading {
+        padding:
+            0 8px;
+
+        margin-bottom: 34px;
+    }
+
+    .google-reviews-intro {
+        font-size: 16px;
+    }
+
+
+    /* ---------------------------------------------------------
+       Mobile Google summary
+       Logo + title + subtitle only
+       --------------------------------------------------------- */
+
+    .google-rating-summary {
+        display: block;
+
+        padding: 24px 26px;
+
+        border-radius: 20px;
+    }
+
+    .google-rating-brand {
+        width: 100%;
+    }
+
+    .google-rating-score {
+        display: none !important;
+    }
+
+    .google-rating-summary
+    .google-reviews-button {
+        display: none !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       Mobile carousel
+       --------------------------------------------------------- */
+
+    .google-reviews-grid {
+        gap: 16px;
+
+        margin:
+            0 -15px;
+
+        padding:
+            4px 15px
+            18px;
+
+        scroll-padding-inline: 9%;
+    }
+
+    .google-review-card {
+        flex:
+            0 0
+            82%;
+
+        scroll-snap-align:
+            center;
+    }
+
+
+    /* ---------------------------------------------------------
+       Mobile dots
+       --------------------------------------------------------- */
+
+    .google-reviews-mobile-hint {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 7px;
+
+        margin-top: 6px;
+    }
+
+    .google-reviews-mobile-hint span {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 999px;
+
+        background: #cdd4d9;
+
+        transition:
+            width 0.2s ease,
+            background-color 0.2s ease;
+    }
+
+    .google-reviews-mobile-hint
+    span.is-active {
+        width: 18px;
+
+        background: #007bff;
+    }
+
+
+    /* ---------------------------------------------------------
+       Mobile bottom CTA
+       Swipe replaces arrows
+       --------------------------------------------------------- */
+
+    .google-reviews-actions {
+        display: block;
+
+        margin-top: 28px;
+    }
+
+    .google-reviews-actions
+    .google-reviews-arrow {
+        display: none !important;
+    }
+
+    .google-reviews-actions
+    .google-reviews-button-primary {
+        width: 100%;
+    }
+
 }
 
 
-/* === GO DELIVERY REVIEWS PHASE 10 END === */
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .google-reviews-grid {
+        scroll-behavior: auto;
+    }
+
+}
+
+/* =========================================
+   WRAPPER AVEC FONDU GAUCHE / DROITE
+   ========================================= */
+
+.google-reviews-carousel-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+/* couleur du fond de la section */
+.google-reviews-carousel-frame::before,
+.google-reviews-carousel-frame::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.google-reviews-carousel-frame::before {
+    left: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(247, 248, 250, 0.78) 0%,
+            rgba(247, 248, 250, 0.55) 30%,
+            rgba(247, 248, 250, 0.28) 60%,
+            rgba(247, 248, 250, 0) 100%
+        );
+}
+
+.google-reviews-carousel-frame::after {
+    right: 0;
+
+    background:
+        linear-gradient(
+            to left,
+            rgba(247, 248, 250, 0.78) 0%,
+            rgba(247, 248, 250, 0.55) 30%,
+            rgba(247, 248, 250, 0.28) 60%,
+            rgba(247, 248, 250, 0) 100%
+        );
+}
+
+@media (max-width: 991.98px) {
+    .google-reviews-carousel-frame::before,
+    .google-reviews-carousel-frame::after {
+        width: 64px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .google-reviews-carousel-frame::before,
+    .google-reviews-carousel-frame::after {
+        width: 34px;
+    }
+}
