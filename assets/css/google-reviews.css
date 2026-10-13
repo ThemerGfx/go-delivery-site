@@ -738,8 +738,6 @@
 
 /* =========================================================
    TABLET
-   2 cartes principales centrées
-   avec aperçu à gauche et à droite
    ========================================================= */
 
 @media (
@@ -805,8 +803,6 @@
 
 /* =========================================================
    MOBILE
-   1 carte principale centrée
-   avec aperçu à gauche et à droite
    ========================================================= */
 
 @media (
@@ -831,7 +827,7 @@
 
     /* ---------------------------------------------------------
        Mobile Google summary
-       Logo + title + subtitle only
+       Logo + title + subtitle + rating
        --------------------------------------------------------- */
 
     .google-rating-summary {
@@ -846,8 +842,83 @@
         width: 100%;
     }
 
+    .google-rating-brand strong {
+        font-size: 19px;
+    }
+
+    .google-rating-brand span {
+        font-size: 14px;
+    }
+
     .google-rating-score {
-        display: none !important;
+        display: flex !important;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 14px;
+
+        margin-top: 18px;
+
+        padding-top: 18px;
+
+        border-top:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.10
+            );
+    }
+
+    .google-rating-value {
+        flex: 0 0 auto;
+
+        color: #ffffff;
+
+        font-size: 32px;
+        font-weight: 700;
+
+        line-height: 1;
+    }
+
+    .google-rating-details {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+    .google-stars {
+        gap: 2px;
+
+        color: #ffb400;
+
+        font-size: 17px;
+
+        line-height: 1;
+    }
+
+    .google-rating-count {
+        display: block;
+
+        margin: 0;
+
+        color:
+            rgba(
+                255,
+                255,
+                255,
+                0.78
+            );
+
+        font-size: 13px;
+
+        line-height: 1.4;
     }
 
     .google-rating-summary
@@ -958,24 +1029,30 @@
 
 }
 
-/* =========================================
-   WRAPPER AVEC FONDU GAUCHE / DROITE
-   ========================================= */
+
+/* =========================================================
+   CAROUSEL FRAME / EDGE FADE
+   ========================================================= */
 
 .google-reviews-carousel-frame {
     position: relative;
+
     overflow: hidden;
 }
 
-/* couleur du fond de la section */
 .google-reviews-carousel-frame::before,
 .google-reviews-carousel-frame::after {
     content: "";
+
     position: absolute;
+
     top: 0;
     bottom: 0;
+
     width: 90px;
+
     z-index: 3;
+
     pointer-events: none;
 }
 
@@ -1005,16 +1082,24 @@
         );
 }
 
-@media (max-width: 991.98px) {
+@media (
+    max-width: 991.98px
+) {
+
     .google-reviews-carousel-frame::before,
     .google-reviews-carousel-frame::after {
         width: 64px;
     }
+
 }
 
-@media (max-width: 767.98px) {
+@media (
+    max-width: 767.98px
+) {
+
     .google-reviews-carousel-frame::before,
     .google-reviews-carousel-frame::after {
         width: 34px;
     }
+
 }
