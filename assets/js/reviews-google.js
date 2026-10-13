@@ -296,7 +296,10 @@
         top.appendChild(
             author
         );
-
+        
+        article.appendChild(
+            top
+        );
 
         /* STARS */
 
