@@ -16,6 +16,9 @@
     const MAX_REVIEWS =
         10;
 
+    const COUNTER_ID =
+    "google-review-counter";
+
 
     function getSection() {
         return document.querySelector(
@@ -476,6 +479,11 @@
             ?? payload.totalReviewCount
             ?? null;
 
+        const counter =
+            document.getElementById(
+                COUNTER_ID
+            );
+
         if (
             rating
             && average !== null
@@ -496,6 +504,26 @@
             count.textContent =
                 total
                 + " avis Google";
+        }
+
+        if (
+            counter
+            && total !== null
+        ) {
+            const totalNumber =
+                Number(total);
+
+            if (
+                Number.isFinite(
+                    totalNumber
+                )
+                && totalNumber >= 10
+            ) {
+                counter.textContent =
+                    Math.floor(
+                        totalNumber / 10
+                    ) * 10;
+            }
         }
     }
 
