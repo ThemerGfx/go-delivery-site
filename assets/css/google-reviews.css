@@ -825,106 +825,137 @@
     }
 
 
-    /* ---------------------------------------------------------
-       Mobile Google summary
-       Logo + title + subtitle + rating
-       --------------------------------------------------------- */
+/* ---------------------------------------------------------
+   Mobile Google summary
+   Premium compact layout
+   --------------------------------------------------------- */
 
-    .google-rating-summary {
-        display: block;
+.google-rating-summary {
+    display: block;
 
-        padding: 24px 26px;
+    padding: 22px 22px 20px;
 
-        border-radius: 20px;
-    }
+    border-radius: 20px;
 
-    .google-rating-brand {
-        width: 100%;
-    }
+    background: #0f1b24;
 
-    .google-rating-brand strong {
-        font-size: 19px;
-    }
+    box-shadow:
+        0 14px 34px
+        rgba(
+            15,
+            27,
+            36,
+            0.14
+        );
+}
 
-    .google-rating-brand span {
-        font-size: 14px;
-    }
+.google-rating-brand {
+    display: flex;
 
-    .google-rating-score {
-        display: flex !important;
+    align-items: center;
 
-        align-items: center;
-        justify-content: flex-start;
+    gap: 14px;
 
-        gap: 14px;
+    width: 100%;
+}
 
-        margin-top: 18px;
+.google-rating-brand .google-g {
+    width: 48px;
+    height: 48px;
 
-        padding-top: 18px;
+    flex: 0 0 48px;
+}
 
-        border-top:
-            1px solid
-            rgba(
-                255,
-                255,
-                255,
-                0.10
-            );
-    }
+.google-rating-brand strong {
+    margin: 0;
 
-    .google-rating-value {
-        flex: 0 0 auto;
+    color: #ffffff;
 
-        color: #ffffff;
+    font-size: 18px;
+    line-height: 1.15;
+}
 
-        font-size: 32px;
-        font-weight: 700;
+.google-rating-brand span {
+    margin-top: 4px;
 
-        line-height: 1;
-    }
+    color: #b9c2c9;
 
-    .google-rating-details {
-        display: flex;
+    font-size: 13px;
+    line-height: 1.35;
+}
 
-        flex-direction: column;
+.google-rating-score {
+    display: flex !important;
 
-        align-items: flex-start;
+    align-items: center;
 
-        gap: 5px;
-    }
+    gap: 10px;
 
-    .google-stars {
-        gap: 2px;
+    margin-top: 16px;
 
-        color: #ffb400;
+    padding: 0;
 
-        font-size: 17px;
+    border: 0;
+}
 
-        line-height: 1;
-    }
+.google-rating-value {
+    flex: 0 0 auto;
 
-    .google-rating-count {
-        display: block;
+    margin: 0;
 
-        margin: 0;
+    color: #ffffff;
 
-        color:
-            rgba(
-                255,
-                255,
-                255,
-                0.78
-            );
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
 
-        font-size: 13px;
+.google-rating-details {
+    display: flex;
 
-        line-height: 1.4;
-    }
+    flex: 1;
 
-    .google-rating-summary
-    .google-reviews-button {
-        display: none !important;
-    }
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.google-stars {
+    display: flex;
+
+    gap: 1px;
+
+    margin: 0;
+
+    color: #ffb400;
+
+    font-size: 16px;
+    line-height: 1;
+}
+
+.google-rating-count {
+    margin: 0;
+
+    color: #d6dde2;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.google-rating-summary
+.google-reviews-button {
+    display: none !important;
+}
 
 
     /* ---------------------------------------------------------
