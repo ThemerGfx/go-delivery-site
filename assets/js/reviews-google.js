@@ -298,33 +298,6 @@
         );
 
 
-        /* GOOGLE SOURCE */
-
-        const source =
-            document.createElement(
-                "span"
-            );
-
-        source.className =
-            "google-review-source";
-
-        source.setAttribute(
-            "aria-label",
-            "Google"
-        );
-
-        source.textContent =
-            "G";
-
-        top.appendChild(
-            source
-        );
-
-        article.appendChild(
-            top
-        );
-
-
         /* STARS */
 
         article.appendChild(
