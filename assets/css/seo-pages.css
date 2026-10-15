@@ -378,3 +378,68 @@
 }
 
 /* === GO DELIVERY SEO TEXT FULL WIDTH END === */
+
+
+
+
+/* === GO DELIVERY SEO SERVICE CAROUSEL START === */
+
+.seo-service-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 52px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(15, 27, 36, 0.12);
+    background: #0f1b24;
+}
+
+.seo-service-carousel .carousel-inner {
+    width: 100%;
+}
+
+.seo-service-carousel .carousel-item {
+    width: 100%;
+}
+
+.seo-service-carousel .carousel-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.seo-service-carousel .carousel-control-prev,
+.seo-service-carousel .carousel-control-next {
+    width: 10%;
+}
+
+.seo-service-carousel .carousel-control-prev-icon,
+.seo-service-carousel .carousel-control-next-icon {
+    width: 42px;
+    height: 42px;
+    background-size: 22px;
+    border-radius: 50%;
+    background-color: rgba(15, 27, 36, 0.72);
+}
+
+@media (max-width: 767.98px) {
+    .seo-service-carousel {
+        margin-bottom: 36px;
+        border-radius: 14px;
+    }
+
+    .seo-service-carousel .carousel-control-prev,
+    .seo-service-carousel .carousel-control-next {
+        width: 14%;
+    }
+
+    .seo-service-carousel .carousel-control-prev-icon,
+    .seo-service-carousel .carousel-control-next-icon {
+        width: 36px;
+        height: 36px;
+        background-size: 18px;
+    }
+}
+
+/* === GO DELIVERY SEO SERVICE CAROUSEL END === */
