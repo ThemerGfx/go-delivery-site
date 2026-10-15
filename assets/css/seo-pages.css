@@ -363,3 +363,18 @@
 }
 
 /* === GO DELIVERY HERO SERVICE CENTER END === */
+
+/* === GO DELIVERY SEO TEXT FULL WIDTH START === */
+
+/* Paragraphes principaux des pages déménagement */
+.seo-service-intro {
+    max-width: none;
+    width: 100%;
+}
+
+.seo-zone p {
+    max-width: none;
+    width: 100%;
+}
+
+/* === GO DELIVERY SEO TEXT FULL WIDTH END === */
