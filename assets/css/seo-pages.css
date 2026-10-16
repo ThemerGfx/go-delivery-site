@@ -386,27 +386,31 @@
 
 .seo-service-carousel {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1150px;
     margin: 0 auto 52px;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 12px 32px rgba(15, 27, 36, 0.12);
-    background: #0f1b24;
+    background: #f4f6f8;
 }
 
 .seo-service-carousel .carousel-inner {
     width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #f4f6f8;
 }
 
 .seo-service-carousel .carousel-item {
     width: 100%;
+    height: 100%;
 }
 
 .seo-service-carousel .carousel-item img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 .seo-service-carousel .carousel-control-prev,
@@ -443,3 +447,73 @@
 }
 
 /* === GO DELIVERY SEO SERVICE CAROUSEL END === */
+
+
+/* PHASE16_CAROUSEL_CADRAGE_FIX_START */
+.seo-service-carousel,
+.seo-transport-carousel {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto 52px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(15, 27, 36, 0.12);
+    background: transparent;
+}
+
+.seo-service-carousel .carousel-inner,
+.seo-transport-carousel .carousel-inner {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    background: transparent;
+}
+
+.seo-service-carousel .carousel-item,
+.seo-transport-carousel .carousel-item {
+    width: 100%;
+    height: auto !important;
+    background: transparent;
+}
+
+.seo-service-carousel .carousel-item img,
+.seo-transport-carousel .carousel-item img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center;
+    margin: 0 auto;
+    background: transparent;
+}
+
+/* Si Bootstrap ou autre impose une hauteur fixe ailleurs */
+.seo-service-carousel .carousel-item.active,
+.seo-service-carousel .carousel-item-next,
+.seo-service-carousel .carousel-item-prev,
+.seo-transport-carousel .carousel-item.active,
+.seo-transport-carousel .carousel-item-next,
+.seo-transport-carousel .carousel-item-prev {
+    display: block;
+}
+
+/* Flèches un peu plus propres */
+.seo-service-carousel .carousel-control-prev,
+.seo-service-carousel .carousel-control-next,
+.seo-transport-carousel .carousel-control-prev,
+.seo-transport-carousel .carousel-control-next {
+    width: 56px;
+}
+
+@media (max-width: 768px) {
+    .seo-service-carousel,
+    .seo-transport-carousel {
+        max-width: 100%;
+        border-radius: 14px;
+        margin: 0 auto 36px;
+    }
+}
+/* PHASE16_CAROUSEL_CADRAGE_FIX_END */
+

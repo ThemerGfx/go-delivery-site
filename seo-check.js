@@ -277,6 +277,174 @@ function jsonLdBlocks(html) {
   return blocks;
 }
 
+
+function auditLocalMovingServiceSchema(page, html, errors) {
+  const localPages = {
+    "demenagement-marseille.html": {
+      city: "Marseille",
+      region: "Provence-Alpes-Côte d'Azur",
+    },
+    "demenagement-aix-en-provence.html": {
+      city: "Aix-en-Provence",
+      region: "Provence-Alpes-Côte d'Azur",
+    },
+    "demenagement-aubagne.html": {
+      city: "Aubagne",
+      region: "Provence-Alpes-Côte d'Azur",
+    },
+    "demenagement-toulon.html": {
+      city: "Toulon",
+      region: "Provence-Alpes-Côte d'Azur",
+    },
+    "demenagement-nice.html": {
+      city: "Nice",
+      region: "Provence-Alpes-Côte d'Azur",
+    },
+    "demenagement-montpellier.html": {
+      city: "Montpellier",
+      region: "Occitanie",
+    },
+  };
+
+  const config = localPages[page];
+
+  if (!config) {
+    return;
+  }
+
+  const expectedUrl =
+    `${SITE_ORIGIN}/${page}`;
+
+  const expectedName =
+    `Déménagement à ${config.city}`;
+
+  const serviceEntities = [];
+
+  for (const block of jsonLdBlocks(html)) {
+    if (!block) {
+      continue;
+    }
+
+    let parsed;
+
+    try {
+      parsed = JSON.parse(block);
+    } catch {
+      continue;
+    }
+
+    for (const entity of flattenJsonLd(parsed)) {
+      const types = Array.isArray(entity["@type"])
+        ? entity["@type"]
+        : [entity["@type"]];
+
+      if (types.includes("Service")) {
+        serviceEntities.push(entity);
+      }
+    }
+  }
+
+  if (!serviceEntities.length) {
+    errors.push(
+      `[${page}] Missing Service JSON-LD for local moving page.`
+    );
+    return;
+  }
+
+  const service =
+    serviceEntities.find(
+      (entity) =>
+        entity.url === expectedUrl ||
+        entity.name === expectedName
+    ) || serviceEntities[0];
+
+  if (service.name !== expectedName) {
+    errors.push(
+      `[${page}] Service JSON-LD name incorrect. Expected "${expectedName}" but found "${service.name || "missing"}".`
+    );
+  }
+
+  if (
+    normalizeUrl(service.url || "") !==
+    normalizeUrl(expectedUrl)
+  ) {
+    errors.push(
+      `[${page}] Service JSON-LD URL incorrect. Expected ${expectedUrl} but found ${service.url || "missing"}.`
+    );
+  }
+
+  if (
+    service.serviceType !==
+    "Service de déménagement"
+  ) {
+    errors.push(
+      `[${page}] Service JSON-LD serviceType must be "Service de déménagement".`
+    );
+  }
+
+  const areaServed =
+    Array.isArray(service.areaServed)
+      ? service.areaServed
+      : service.areaServed
+        ? [service.areaServed]
+        : [];
+
+  const cityFound =
+    areaServed.some(
+      (area) =>
+        area &&
+        area["@type"] === "City" &&
+        area.name === config.city
+    );
+
+  const regionFound =
+    areaServed.some(
+      (area) =>
+        area &&
+        area["@type"] === "AdministrativeArea" &&
+        area.name === config.region
+    );
+
+  const franceFound =
+    areaServed.some(
+      (area) =>
+        area &&
+        area["@type"] === "Country" &&
+        area.name === "France"
+    );
+
+  if (!cityFound) {
+    errors.push(
+      `[${page}] Service JSON-LD areaServed is missing city "${config.city}".`
+    );
+  }
+
+  if (!regionFound) {
+    errors.push(
+      `[${page}] Service JSON-LD areaServed is missing region "${config.region}".`
+    );
+  }
+
+  if (!franceFound) {
+    errors.push(
+      `[${page}] Service JSON-LD areaServed is missing France.`
+    );
+  }
+
+  const providerId =
+    service.provider &&
+    service.provider["@id"];
+
+  if (
+    providerId !==
+    `${SITE_ORIGIN}/#business`
+  ) {
+    errors.push(
+      `[${page}] Service JSON-LD provider must reference ${SITE_ORIGIN}/#business.`
+    );
+  }
+}
+
 function sitemapUrls(root, errors) {
   const sitemapPath = path.join(root, "sitemap.xml");
 
@@ -660,6 +828,13 @@ function auditSite(root = ROOT) {
         }
       }
     }
+
+    // LOCAL MOVING PAGE SCHEMA
+    auditLocalMovingServiceSchema(
+      page,
+      html,
+      errors
+    );
 
     // JSON-LD
     for (const block of jsonLdBlocks(
