@@ -469,32 +469,61 @@ Top bar social alignment + navbar CTA
 
 /* =========================================================
 GO DELIVERY — RESPONSIVE LOGO ALIGNMENT
+Logo stays inside the orange header area
 ========================================================= */
 
-@media (max-width: 1199.98px) {
-  .header-area-2 .menu-area-2 .row {
-    position: relative;
+@media (max-width: 575.98px) {
+  .menu-area.menu-area-2 .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(2vw);
   }
 
-  .header-area-2 .menu-area-2 .logo-area {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .header-area-2 .menu-area-2 .logo-badge {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .menu-area.menu-area-2 .logo-badge {
+    position: static !important;
+    transform: none !important;
     margin: 0 !important;
   }
 }
 
-@media (min-width: 1200px) {
-  .header-area-2 .menu-area-2 .logo-badge {
-    position: static;
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .menu-area.menu-area-2 .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-5vw);
+  }
+
+  .menu-area.menu-area-2 .logo-badge {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .menu-area.menu-area-2 .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-7.5vw);
+  }
+
+  .menu-area.menu-area-2 .logo-badge {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-area.menu-area-2 .logo-area {
     transform: none;
-    margin: 0;
+  }
+
+  .menu-area.menu-area-2 .logo-badge {
+    position: static !important;
+    transform: none !important;
   }
 }
