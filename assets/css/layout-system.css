@@ -372,22 +372,6 @@ Contact page — trust / conversion block
 /* PHASE18B_CONTACT_CONVERSION_END */
 
 
-@media (max-width: 767.98px) {
-  .contact-trust-heading h2 {
-    font-size: 40px;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-  }
-}
-
-@media (max-width: 420px) {
-  .contact-trust-heading h2 {
-    font-size: 35px;
-    line-height: 1.1;
-  }
-}
-
-
 /* =========================================================
 PHASE18B_CONTACT_MOBILE_TITLE_FIX_START
 ========================================================= */
@@ -408,3 +392,109 @@ PHASE18B_CONTACT_MOBILE_TITLE_FIX_START
 }
 
 /* PHASE18B_CONTACT_MOBILE_TITLE_FIX_END */
+
+
+/* =========================================================
+PHASE18C_GLOBAL_HEADER_START
+Top bar social alignment + navbar CTA
+========================================================= */
+
+/* Alignement vertical propre du bandeau supérieur */
+.header-top-2 .row {
+  min-height: 44px;
+}
+
+/* Réseaux sociaux */
+.header-top-2 .header-social-2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0;
+  height: 100%;
+}
+
+.header-top-2 .header-social-2 li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 !important;
+  padding: 0;
+}
+
+.header-top-2 .header-social-2 li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+
+  margin: 0;
+  padding: 0;
+}
+
+.header-top-2 .header-social-2 li a i {
+  display: block;
+  line-height: 1;
+}
+
+/* CTA navbar */
+.header-area-2 .nav-right-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-area-2 .nav-right-content .primary-btn {
+  white-space: nowrap;
+}
+
+.header-area-2 .nav-right-content .primary-btn .text {
+  white-space: nowrap;
+}
+
+/* PHASE18C_GLOBAL_HEADER_END */
+
+@media (max-width: 1199.98px) {
+  .header-area-2 .nav-right-content {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+GO DELIVERY — RESPONSIVE LOGO ALIGNMENT
+========================================================= */
+
+@media (max-width: 1199.98px) {
+  .header-area-2 .menu-area-2 .row {
+    position: relative;
+  }
+
+  .header-area-2 .menu-area-2 .logo-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header-area-2 .menu-area-2 .logo-badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-area-2 .menu-area-2 .logo-badge {
+    position: static;
+    transform: none;
+    margin: 0;
+  }
+}
